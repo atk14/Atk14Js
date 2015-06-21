@@ -1,0 +1,30 @@
+{
+  "name": "atk14js",
+  "version": "1.0.0",
+  "authors": [
+    "Bohdan Ganický <bohdan.ganicky@gmail.com>"
+  ],
+  "description": "Ajax adapter for ATK14 framework.",
+  "main": "src/atk14.js",
+  "moduleType": [
+    "globals"
+  ],
+  "keywords": [
+    "atk14",
+    "ajax",
+    "jQuery",
+    "adapter"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/atk14/Atk14Js",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "~2.1.4"
+  }
+}

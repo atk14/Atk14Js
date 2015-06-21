@@ -1,0 +1,16 @@
+{
+	"boss": true,
+	"browser": true,
+	"curly": true,
+	"eqeqeq": true,
+	"eqnull": true,
+	"evil": true,
+	"expr": true,
+	"immed": true,
+	"jquery": true,
+	"noarg": true,
+	"quotmark": "double",
+	"undef": true,
+	"unused": true,
+	"node": true
+}
