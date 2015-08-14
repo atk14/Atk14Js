@@ -69,12 +69,12 @@ var ATK14 = ( function() {
 				dataType = $element.data( "type" ) || $.ajaxSettings.dataType;
 
 			if ( $element.is( "form" ) ) {
-				$form = $element; // remove later
+				$form = $element; // Remove later
 				method = $element.attr( "method" );
 				url = $element.attr( "action" );
 				data = $element.serializeArray();
 			} else {
-				$link = $element; // remove later
+				$link = $element; // Remove later
 				method = $element.data( "method" );
 				url = $element.attr( "href" );
 				data = null;
