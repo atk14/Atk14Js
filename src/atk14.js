@@ -85,6 +85,7 @@ var ATK14 = ( function() {
 				type: method || "GET",
 				data: data,
 				dataType: dataType,
+				cache: false,
 				beforeSend: function( xhr, settings ) {
 					return fire( $element, "ajax:beforeSend", [ xhr, settings ] );
 				},
