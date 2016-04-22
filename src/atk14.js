@@ -18,12 +18,12 @@ var ATK14 = ( function() {
 	} );
 
 	// Here is onClick on a button with a "name" attribute.
-	// Values of attributes "name" and "value" have to be passed as an extra parameter.
+	// Values of attributes "name" and "value" have to be put together into an extra parameter and passed to handleRemote.
 	$( document ).on( "click", "form[data-remote] button[type=\"submit\"][name]", function( e ) {
 		var $button = $( this ), $form = $button.closest( "form" );
 		ATK14.handleRemote( $form, [ {
-			name: $button.attr("name"),
-			value: $button.attr("value")
+			name: $button.attr( "name" ),
+			value: $button.attr( "value" )
 		} ] );
 		e.preventDefault();
 	} );
@@ -86,7 +86,7 @@ var ATK14 = ( function() {
 				method = $element.attr( "method" );
 				url = $element.attr( "action" );
 				data = $element.serializeArray();
-				data = data.concat(extraParams);
+				data = data.concat( extraParams );
 			} else {
 				$link = $element; // Remove later
 				method = $element.data( "method" );
