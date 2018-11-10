@@ -1,6 +1,6 @@
 {
   "name": "atk14js",
-  "version": "1.0.1",
+  "version": "1.1.0",
   "description": "Ajax adapter for ATK14 framework.",
   "main": "src/atk14.js",
   "repository": {
@@ -19,10 +19,7 @@
     "url": "https://github.com/atk14/Atk14Js/issues"
   },
   "homepage": "https://github.com/atk14/Atk14Js#readme",
-  "devDependencies": {
-    "gulp": "^3.9.0",
-    "gulp-jscs": "^1.6.0",
-    "gulp-jshint": "^1.11.0",
-    "jshint-stylish": "^2.0.1"
-  }
+	"dependencies": {
+		"jquery": ">=1.12"
+	}
 }
