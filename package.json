@@ -19,7 +19,7 @@
     "url": "https://github.com/atk14/Atk14Js/issues"
   },
   "homepage": "https://github.com/atk14/Atk14Js#readme",
-	"dependencies": {
-		"jquery": ">=1.12"
-	}
+  "dependencies": {
+    "jquery": ">=1.12"
+  }
 }
