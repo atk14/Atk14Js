@@ -75,35 +75,43 @@ var ATK14 = ( function() {
 		action: $( "meta[name='x-action']" ).attr( "content" ),
 
 		handleRemote: function( element, extraParams ) {
-			var method, url, data, $link, $form,
+			var method, url, data, formData, $link, $form,
 				$element = $( element ),
+				settings,
 				dataType = $element.data( "type" ) || $.ajaxSettings.dataType;
 
-			extraParams = extraParams || [];
+			extraParams = extraParams || []; // [ { name: "name1", value: "value1" }, { name: "name2", value: "value2" }, ... ]
+
+			method = $element.is( "form" ) ? $element.attr( "method" ) : $element.data( "method" );
+			method = method || "GET"; // By default the method is GET
+			method = method.toUpperCase();
 
 			if ( $element.is( "form" ) ) {
 				$form = $element; // Remove later
-				method = $element.attr( "method" );
 				url = $element.attr( "action" );
-				data = $element.serializeArray();
-				data = data.concat( extraParams );
+				if ( method == "POST" && ( "FormData" in window ) ) {
+					formData = new FormData( element );
+					for ( var i in extraParams ) {
+						formData.append( extraParams[ i ].name, extraParams[ i ].value );
+					}
+				} else{
+					data = $element.serializeArray();
+					data = data.concat( extraParams );
+				}
 			} else {
 				$link = $element; // Remove later
-				method = $element.data( "method" );
 				url = $element.attr( "href" );
 				data = null;
 			}
 
-			method = method || "GET"; // By default the method is GET
-			if ( method.toUpperCase() == "GET" ) {
+			if ( method == "GET" ) {
 				url += url.indexOf("?")>=0 ? "&" : "?";
 				url += "__xhr_request=1";
 			}
 
-			$.ajax( {
+			settings = {
 				url: url,
 				type: method,
-				data: data,
 				dataType: dataType,
 				beforeSend: function( xhr, settings ) {
 					return fire( $element, "ajax:beforeSend", [ xhr, settings ] );
@@ -121,7 +129,18 @@ var ATK14 = ( function() {
 				error: function( xhr, status, error ) {
 					$element.trigger( "ajax:error", [ xhr, status, error ] );
 				}
-			} );
+			}
+
+			if ( formData ) {
+				// https://www.mattlunn.me.uk/blog/2012/05/sending-formdata-with-jquery-ajax/
+				settings.data = formData;
+				settings.contentType = false;
+				settings.processData = false;
+			} else {
+				settings.data = data;
+			}
+
+			$.ajax( settings );
 		}
 	};
 
