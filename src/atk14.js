@@ -21,11 +21,12 @@ var ATK14 = ( function() {
 	// Values of attributes "name" and "value" have to be put together into an extra parameter and passed to handleRemote.
 	$( document ).on( "click", "form[data-remote] button[type=\"submit\"][name]", function( e ) {
 		var $button = $( this ), $form = $button.closest( "form" );
-		ATK14.handleRemote( $form, [ {
+		e.preventDefault();
+		ATK14.handleRemote( $form[ 0 ], [ {
 			name: $button.attr( "name" ),
 			value: $button.attr( "value" )
 		} ] );
-		e.preventDefault();
+		return false;
 	} );
 
 	$( document ).on( "submit", "form[data-remote]", function( e ) {
@@ -80,7 +81,9 @@ var ATK14 = ( function() {
 				settings,
 				dataType = $element.data( "type" ) || $.ajaxSettings.dataType;
 
-			extraParams = extraParams || []; // [ { name: "name1", value: "value1" }, { name: "name2", value: "value2" }, ... ]
+			if( extraParams === undefined ) { // [ { name: "name1", value: "value1" }, { name: "name2", value: "value2" }, ... ]
+				extraParams = [];
+			}
 
 			method = $element.is( "form" ) ? $element.attr( "method" ) : $element.data( "method" );
 			method = method || "GET"; // By default the method is GET
