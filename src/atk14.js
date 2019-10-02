@@ -81,7 +81,11 @@ var ATK14 = ( function() {
 				settings,
 				dataType = $element.data( "type" ) || $.ajaxSettings.dataType;
 
-			if( extraParams === undefined ) { // [ { name: "name1", value: "value1" }, { name: "name2", value: "value2" }, ... ]
+			if ( element instanceof jQuery ) {
+				element = element[ 0 ];
+			}
+
+			if ( extraParams === undefined ) { // [ { name: "name1", value: "value1" }, { name: "name2", value: "value2" }, ... ]
 				extraParams = [];
 			}
 
