@@ -3,6 +3,16 @@ Change Log
 
 All notable changes to the TemplatePanel will be documented in this file.
 
+[1.2.2] 2019-10-02
+------------------
+
+- The first parameter of method handleRemote() can also be an jQuery object
+
+[1.2.1] 2019-09-20
+------------------
+
+- Handling of click on "form[data-remote] button=[type='submit']" improved
+
 [1.2.0] 2019-09-16
 ------------------
 

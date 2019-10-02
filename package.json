@@ -1,6 +1,6 @@
 {
   "name": "atk14js",
-  "version": "1.2.1",
+  "version": "1.2.2",
   "description": "Ajax adapter for ATK14 framework.",
   "main": "src/atk14.js",
   "repository": {
