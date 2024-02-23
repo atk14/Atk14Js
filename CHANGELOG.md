@@ -3,6 +3,12 @@ Change Log
 
 All notable changes to the TemplatePanel will be documented in this file.
 
+[1.2.3] 2024-02-23
+------------------
+
+* 8160bcc - Links with the attribute data-method="get" are handled properly
+
+
 [1.2.2] 2019-10-02
 ------------------
 
