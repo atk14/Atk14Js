@@ -3,6 +3,12 @@ Change Log
 
 All notable changes to the TemplatePanel will be documented in this file.
 
+[1.2.4] 2026-10-24
+------------------
+
+* 1ab3488 - data-href attribute, when present, is used instead of href
+
+
 [1.2.3] 2024-02-23
 ------------------
 
