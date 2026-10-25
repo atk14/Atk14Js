@@ -108,7 +108,7 @@ var ATK14 = ( function() {
 				url = $element.attr( "action" );
 				if ( method === "POST" && ( "FormData" in window ) ) {
 					formData = new FormData( element );
-					for ( var i in extraParams ) {
+					for ( var i = 0; i < extraParams.length; i++ ) {
 						formData.append( extraParams[ i ].name, extraParams[ i ].value );
 					}
 				} else{
