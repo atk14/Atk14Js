@@ -64,10 +64,16 @@ var ATK14 = ( function() {
 		var href = $link.data( "href" ) ? $link.data( "href" ) : $link.attr( "href" ),
 			method = $link.data( "method" ),
 			formMethod = method.toLowerCase() === "get" ? "get" : "post",
-			$form = $( "<form method='" + formMethod + "' action='" + href + "'></form>" ).hide();
+			$form = $( "<form></form>" ).attr( {
+				method: formMethod,
+				action: href
+			} ).hide();
 
 		if ( method.toLowerCase() !== "get" && method.toLowerCase() !== "post" ) {
-			$form = $form.append( "<input name='_method' value='" + method + "' type='hidden' />" );
+			$form.append( $( "<input type='hidden' />" ).attr( {
+				name: "_method",
+				value: method
+			} ) );
 		}
 
 		$form.appendTo( "body" );
