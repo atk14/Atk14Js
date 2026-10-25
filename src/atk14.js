@@ -146,7 +146,7 @@ var ATK14 = ( function() {
 				error: function( xhr, status, error ) {
 					$element.trigger( "ajax:error", [ xhr, status, error ] );
 				}
-			}
+			};
 
 			if ( formData ) {
 				// https://www.mattlunn.me.uk/blog/2012/05/sending-formdata-with-jquery-ajax/
