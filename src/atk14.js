@@ -100,7 +100,7 @@ var ATK14 = ( function() {
 			if ( $element.is( "form" ) ) {
 				$form = $element; // Remove later
 				url = $element.attr( "action" );
-				if ( method == "POST" && ( "FormData" in window ) ) {
+				if ( method === "POST" && ( "FormData" in window ) ) {
 					formData = new FormData( element );
 					for ( var i in extraParams ) {
 						formData.append( extraParams[ i ].name, extraParams[ i ].value );
@@ -115,7 +115,7 @@ var ATK14 = ( function() {
 				data = null;
 			}
 
-			if ( method == "GET" ) {
+			if ( method === "GET" ) {
 				url += url.indexOf("?")>=0 ? "&" : "?";
 				url += "__xhr_request=1";
 			}
