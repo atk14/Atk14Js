@@ -3,6 +3,15 @@ Change Log
 
 All notable changes to the TemplatePanel will be documented in this file.
 
+[1.2.5] 2026-10-25
+------------------
+
+* e13e61e - Use indexed for loop instead of for...in when appending extra params to FormData
+* 275b478 - Added missing semicolon
+* 2c6c5e5 - Build hidden form via jQuery attr() instead of HTML string concatenation
+* d4416c6 - Use strict equality (===) to comply with eqeqeq lint rule
+
+
 [1.2.4] 2026-10-24
 ------------------
 
