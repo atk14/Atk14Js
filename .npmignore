@@ -1,6 +1,9 @@
 .claude
+.github
 .jshintrc
 .jscsrc
+jest.config.js
+test
 bower_components
 node_modules
 package-lock.json

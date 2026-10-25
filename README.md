@@ -26,9 +26,9 @@ Depends on jQuery >=1.12. Include `src/atk14.js` after jQuery on the page.
 ### Remote links and forms
 
 ```html
-<a href="/articles/1" data-remote>Load article via AJAX</a>
+<a href="/articles/1" data-remote="true">Load article via AJAX</a>
 
-<form action="/articles" method="post" data-remote>
+<form action="/articles" method="post" data-remote="true">
   ...
 </form>
 ```

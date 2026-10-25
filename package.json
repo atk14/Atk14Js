@@ -19,7 +19,14 @@
     "url": "https://github.com/atk14/Atk14Js/issues"
   },
   "homepage": "https://github.com/atk14/Atk14Js#readme",
+  "scripts": {
+    "test": "jest"
+  },
   "dependencies": {
     "jquery": ">=1.12"
+  },
+  "devDependencies": {
+    "jest": "^30.5.2",
+    "jest-environment-jsdom": "^30.5.2"
   }
 }
